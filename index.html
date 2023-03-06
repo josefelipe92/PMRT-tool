@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Breast RT Decision Tool</title>
+    <title>PMRT Tool</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <link href="styles" rel="stylesheet">
 
@@ -13,32 +13,29 @@ event.preventDefault();
 
 
  <!-- variables de las preguntas-->
-var age = document.getElementById('age').value;
+var age = document.getElementById('age');
 var tstage = document.querySelector('input[name="Tstage"]:checked').value;
 var neo = document.querySelector('input[name="Neo"]:checked').value;
-var numberpositive = document.getElementById('numberpositive').value;
-var numbernegative = document.getElementById('numbernegative').value;
-var estrogenrec = document.getElementById('estrogenrec').value;
+var numberpositive = document.getElementById('numberpositive');
+var numbernegative = document.getElementById('numbernegative');
+var estrogenrec = document.getElementById('estrogenrec');
 var her2 = document.querySelector('input[name="her"]:checked').value;
 var grade = document.querySelector('input[name="grade"]:checked').value;
 var lvsi = document.querySelector('input[name="lvsi"]:checked').value;
 var ece = document.querySelector('input[name="ece"]:checked').value;
-var nodesize = document.getElementById('nodesize').value;
-var ki67 = document.getElementById('ki67').value;
-var oncotype = document.getElementById('oncotype').value;
+var nodesize = document.getElementById('nodesize');
+var ki67 = document.getElementById('ki67');
+var oncotype = document.getElementById('oncotype');
 var sentinel = document.querySelector('input[name="sentinel"]:checked').value;
-var cx = document.querySelector('input[name="cx"]:checked').value;
-var tumorsize = document.getElementById('tumorsize').value;
-var margindist = document.getElementById('margindist').value;
 
 var mensajefinal = document.getElementById("mensajefinal");
 
-if (tstage == 4) {
-  mensajefinal.innerHTML = "Based on the data we would recommend radiotherapy + RNI";
+if (tstage==4){
+mensajefinal.innerHTML = "Based on the data we would recommend PMRT + RNI";
 }
+     }
 
- <!-- ESTE DE ABAJO CIERRA LA FUNCION NO BORRAR-->
-}
+
  </script>
 
 
@@ -59,7 +56,7 @@ if (tstage == 4) {
            </image>
            <td>
            <td>
-    <h1>Breast RT Decision Tool</h1>
+    <h1>PMRT Decision Tool</h1>
        <td>
        <tr>
    </table>
@@ -74,7 +71,7 @@ if (tstage == 4) {
 <div>
     <h5>Age</h5>
 </div>
-        <input type ="number"  id="age" >
+        <input type ="number"  id="age">
       <br>
 
 
@@ -102,15 +99,6 @@ if (tstage == 4) {
 <label class="btn btn-secondary" for="option5">T4</label>
       </div>
 
-      <!-- Question add on Tumor size -->
-
-  <div>
-    <div>
-   <h5>What was the tumor size in mm</h5>
-    <input type ="number"  id="tumorsize"><br>
-        </div>
-      </div>
-
       <!-- Question 3 Neotherapy -->
 <div>
     <h5>Did the patient receive neoadjuvant chemotherapy</h5>
@@ -121,38 +109,6 @@ if (tstage == 4) {
 
 <input type="radio" class="btn-check" name="Neo" id="neo2" value="no" autocomplete="off">
 <label class="btn btn-secondary" for="neo2">No</label>
-      </div>
-
-
-       <!-- Question Add in type of cx -->
-<div>
-    <h5>Type of surgery performed</h5>
-</div>
-  <div>
-<input type="radio" class="btn-check" name="cx" id="cx1" value="yes" autocomplete="off">
-<label class="btn btn-secondary" for="cx1">Breast Conserving</label>
-
-<input type="radio" class="btn-check" name="cx" id="cx2" value="no" autocomplete="off">
-<label class="btn btn-secondary" for="cx2">Mastectomy</label>
-      </div>
-
-
-      <!-- Question Add in Margin distance-->
-<div>
-    <h5>Type of surgery performed</h5>
-</div>
-  <div>
-<input type="radio" class="btn-check" name="margindist" id="margin1" value="4" autocomplete="off">
-<label class="btn btn-secondary" for="margin1">Clear margin</label>
-
-<input type="radio" class="btn-check" name="margindist" id="margin2" value="3" autocomplete="off">
-<label class="btn btn-secondary" for="margin2">≥3mm</label>
-
-      <input type="radio" class="btn-check" name="margindist" id="margin3" value="2" autocomplete="off">
-<label class="btn btn-secondary" for="margin3">≥2mm</label>
-
-      <input type="radio" class="btn-check" name="margindist" id="margin4" value="1" autocomplete="off">
-<label class="btn btn-secondary" for="margin4">≥1mm</label>
       </div>
 
        <!-- Question 4 Number of positive nodes -->
@@ -253,7 +209,7 @@ if (tstage == 4) {
         <!-- Question 13 Oncotype score (optional) -->
 <div>
     <div>
-   <h5>What  was the oncotyoe score (optional)</h5>
+   <h5>Size of largest node (mm)</h5>
     <input type ="number"  id="oncotype"><br>
         </div>
       </div>
@@ -286,7 +242,7 @@ if (tstage == 4) {
 
 
       </div>
-<br>
+
 <!-- Button -->
   <button type="button" class="btn btn-outline-secondary" value="Calculate" onclick="write_name();">Calculate</button>
 
