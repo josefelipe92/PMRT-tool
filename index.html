@@ -269,10 +269,10 @@ var T2N0desicion = 0;
 if(tstage == 2 && sumriskfactors >= 3){T2N0desicion=1};
 
 if (tstage>=3 || lymphnodestatus >= 1 || T2N0desicion == 1){
-mensajefinal.innerHTML = "Based on the data we would recommend PMRT + RNI";
+mensajefinal.innerHTML = "Based on the data we would recommend: PMRT + RNI";
 }
 else if (tstage==1 || T2N0desicion==0) {
-    mensajefinal.innerHTML = "Based on the data we would recommend no radiation is needed";
+    mensajefinal.innerHTML = "Based on the data we would recommend: no radiation is needed";
 
 }
 else {
@@ -280,7 +280,7 @@ else {
 
 };
 
-alert("tstage: " + tstage + "\nlymphnodestatus: " + lymphnodestatus + "\nT2N0desicion: " + T2N0desicion);
+
     }
 
 
